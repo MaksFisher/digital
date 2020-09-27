@@ -1,0 +1,41 @@
+@import "config/variables";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// @import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/spacing";
+
+@import "~flickity/dist/flickity.css";
+@import "config/placeholders";
+@import "config/mixins";
+
+@import "base/base";
+@import "base/buttons";
+@import "base/layout";
+
+@import "modules/sliders";
+@import "modules/lets-start";
+@import "modules/burger";
+@import "modules/page-intro";
+
+@import "layout/header";
+@import "layout/footer";
+
+// home
+@import "layout/home/intro";
+@import "layout/home/services";
+@import "layout/home/work";
+@import "layout/home/build";
+@import "layout/home/we-different";
+
+// services
+@import "layout/services";
+
+// services
+@import "layout/works";

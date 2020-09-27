@@ -1,0 +1,353 @@
+.header-section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+// header top
+.header-top {
+    background-color: #0a112e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.top-dd {
+    display: inline-flex;
+    align-items: center;
+    width: 300px;
+
+    .dd-btn {
+        font-size: 12px;
+        padding-right: 10px;
+        color: #fff;
+        display: inline-flex;
+        width: 100%;
+        align-items: center;
+        border-right: 1px solid #fff;
+        cursor: pointer;
+
+        &__logo {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        &__arrow {
+            fill: #fff;
+            margin-left: auto;
+        }
+    }
+}
+
+.top-social {
+    display: flex;
+    align-items: center;
+
+    &__label {
+        color: #fff;
+        font-size: 12px;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 12px;
+        color: #fff;
+        padding: 0 10px;
+        border-left: 1px solid #fff;
+        margin-left: 10px;
+
+        span {
+            font-weight: bold;
+        }
+
+        svg {
+            fill: #fff;
+            margin-right: 5px;
+        }
+    }
+}
+
+// header nav
+.header-nav {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.5s ease;
+    background-color: #fff;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 40px 50px;
+    }
+
+    &__logo {
+        display: inline-flex;
+        width: 200px;
+        height: 22px;
+        position: relative;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            width: 240px;
+            height: 30px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            z-index: 2;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            &.logo-white {
+                opacity: 0;
+            }
+
+            &.logo-darck {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.nav-list {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    padding-top: 60px;
+    transform: translateX(101%);
+    transition: all 0.5s ease;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: static;
+        background-color: transparent;
+        padding-top: 0;
+        transform: none;
+    }
+
+    &--opened {
+        transform: none;
+    }
+
+    &__item {
+        padding: 15px 20px;
+        text-transform: uppercase;
+        font-size: 17px;
+        color: $headings-color;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            padding: 0 30px;
+        }
+
+        &--drop {
+            display: inline-flex;
+            align-items: center;
+
+            .nav-drop-btn {
+                padding: 0 15px;
+                svg {
+                    fill: $headings-color;
+                    transition: all 0.5s ease;
+                    transform: rotate(-90deg);
+
+                    @media (min-width: map_get($grid-breakpoints, lg)) {
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.header-section--home {
+    .header-nav {
+        background-color: transparent;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            height: 0;
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        &__logo {
+            img {
+                &.logo-white {
+                    opacity: 1;
+                }
+
+                &.logo-darck {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .nav-list {
+        &__item {
+            color: #fff;
+
+            &--drop {
+                svg {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    .nav-btn__line span {
+        background-color: #fff;
+    }
+}
+
+// dd
+
+.nav-drop {
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 60px;
+    transform: translateX(101%);
+    transition: all 0.5s ease;
+    z-index: 2;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        display: none;
+        padding: 100px;
+        position: absolute;
+        left: 0;
+        bottom: auto;
+        top: 100%;
+        width: 100%;
+        transform: none;
+        transition: none;
+    }
+
+    &--opened {
+        transform: none;
+    }
+
+    .drop-back,
+    .drop-title {
+        padding: 15px 20px;
+        text-transform: uppercase;
+        font-size: 17px;
+        color: $headings-color;
+    }
+
+    .drop-back {
+        display: inline-flex;
+        align-items: center;
+
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.drop-list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        color: $headings-color;
+        padding: 15px 20px;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            padding: 12px 0;
+        }
+    }
+}
+
+// header active
+
+.header-active,
+.header-scroll {
+    .header-nav {
+        z-index: 1;
+
+        &:before {
+            height: 100%;
+            z-index: -1;
+        }
+
+        &__logo {
+            img {
+                &.logo-white {
+                    opacity: 0;
+                }
+
+                &.logo-darck {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .nav-list {
+        &__item {
+            color: $headings-color;
+
+            &--drop {
+                svg {
+                    fill: $headings-color;
+                }
+            }
+        }
+    }
+
+    .nav-btn__line span {
+        background-color: $headings-color;
+    }
+}
+
+.header-active {
+    .nav-list__item--drop {
+        svg {
+            transform: rotate(-90deg);
+
+            @media (min-width: map_get($grid-breakpoints, lg)) {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.header-scroll {
+    .header-nav {
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            padding: 20px 50px;
+        }
+    }
+}

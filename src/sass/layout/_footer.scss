@@ -1,0 +1,80 @@
+footer {
+    padding: 50px 0;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 30px 50px;
+    }
+}
+
+.footer-logo {
+    font-size: 15px;
+    color: $headings-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+        margin-right: 10px;
+        width: 20px;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        justify-content: flex-start;
+    }
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        margin-bottom: 0;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        flex-direction: row;
+    }
+
+    &__item {
+        padding: 10px;
+        font-size: 12px;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            border-right: 1px solid #ced0d7;
+            padding: 0 10px;
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        justify-content: flex-end;
+    }
+
+    &__item {
+        padding: 10px;
+
+        &:hover {
+            svg {
+                fill: $primary;
+            }
+        }
+    }
+}

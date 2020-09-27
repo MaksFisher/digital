@@ -1,0 +1,110 @@
+.img-full-fit {
+    @extend %absolute;
+    @include img-obj(cover, center, center);
+}
+
+.color-white {
+    color: #fff !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        margin-bottom: 80px;
+    }
+
+    &__img {
+        text-align: center;
+        margin-bottom: 50px;
+
+        img {
+            height: 65px;
+            width: auto;
+        }
+    }
+
+    &__name {
+        margin-bottom: 30px;
+        font-size: 20px;
+        color: $headings-color;
+        text-transform: uppercase;
+    }
+
+    &__heading {
+        font-size: 30px;
+        width: 970px;
+        max-width: 100%;
+        line-height: 40px;
+
+        @media (min-width: map_get($grid-breakpoints, xl)) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+    }
+
+    &__subheading {
+        font-size: 30px;
+        margin-top: 25px;
+    }
+
+    &__text {
+        width: 970px;
+        max-width: 100%;
+        margin-top: 25px;
+    }
+}
+
+// about page
+
+.about-text {
+    text-align: center;
+    font-size: 20px;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        font-size: 30px;
+    }
+}
+
+// typical
+
+.typical-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.typical-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        margin-bottom: 30px;
+    }
+
+    h1,
+    h2 {
+        font-size: 20px;
+        @media (min-width: map_get($grid-breakpoints, xl)) {
+            font-size: 30px;
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,255 @@
+.service-item {
+    width: 100%;
+    position: relative;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        width: 50%;
+    }
+
+    &--title {
+        padding: 50px 20px;
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $headings-color;
+
+        .service-item-title {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 20px;
+
+            @media (min-width: map_get($grid-breakpoints, lg)) {
+                font-size: 30px;
+            }
+
+            @media (min-width: map_get($grid-breakpoints, xl)) {
+                font-size: 50px;
+                margin-bottom: 50px;
+            }
+        }
+
+        .service-item-text {
+            color: #fff;
+        }
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            padding: 100px;
+        }
+    }
+
+    &__img {
+        padding-top: 66%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            @extend .img-full-fit;
+            transition: all 0.5s ease;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: 17px;
+        z-index: 2;
+        margin-top: 20px;
+
+        &--home {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+
+        &--work {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            @media (min-width: map_get($grid-breakpoints, md)) {
+                position: absolute;
+                left: 50px;
+                bottom: 50px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            font-size: 20px;
+        }
+    }
+
+    &:hover {
+        .service-item__img img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// service title and buttons
+
+section.title-section {
+    background-color: #f4f5f6;
+}
+
+.service-btn {
+    display: inline-flex;
+    width: 100%;
+    font-size: 20px;
+    color: $headings-color;
+    padding: 40px;
+    background-color: #fff;
+    position: relative;
+
+    @media (min-width: map_get($grid-breakpoints, md)) {
+        height: 100%;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        font-size: 30px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        background-color: #fff;
+        transition: all 0.5s ease;
+    }
+
+    &:hover {
+        color: $headings-color;
+        &:before {
+            height: 4px;
+            background-color: $primary;
+        }
+    }
+}
+
+// chess-section
+
+.chess-section {
+    .chess-row {
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            .col-lg-5:first-child {
+                margin: 0 8.3333333333%;
+            }
+        }
+
+        @media (min-width: map_get($grid-breakpoints, md)) {
+            &:nth-of-type(odd) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
+.chess-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+.chess-img {
+    max-width: 100%;
+}
+
+// process section
+
+section.process-section {
+}
+
+.proces-title {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.process-item {
+    text-align: center;
+    &__img {
+        width: 165px;
+        height: 165px;
+        margin-bottom: 30px;
+
+        @media (min-width: map_get($grid-breakpoints, xl)) {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+}
+
+// consulting
+
+section.strategy-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    .strategy-bg {
+        z-index: -2;
+    }
+
+    &:before {
+        content: "";
+        @extend %absolute;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 100%);
+        opacity: 0.8;
+        z-index: -1;
+    }
+}
+
+.strategy-bg {
+    z-index: -1;
+}
+
+// system integration
+
+.services-system-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+}
+
+.services-system-text {
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+// prototyping
+
+section.prototyping-banner-section {
+    padding-top: 250/375 * 100%;
+    position: relative;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        padding-top: 560/1680 * 100%;
+    }
+}
+
+.prototyping-banner-title {
+    font-size: 17px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        bottom: 50px;
+        left: 100px;
+        font-size: 20px;
+    }
+}

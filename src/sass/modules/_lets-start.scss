@@ -1,0 +1,41 @@
+section.lets-start-section {
+    background-color: $primary;
+    padding: 50px 20px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 100px;
+    }
+}
+
+.lets-start-title {
+    display: flex;
+    font-size: 30px;
+    flex-direction: column;
+    color: #fff;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        flex-direction: row;
+        align-items: center;
+        font-size: 50px;
+    }
+
+    svg {
+        fill: #fff;
+        width: 30px;
+        height: 30px;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+        }
+    }
+
+    &:hover {
+        color: #fff;
+
+        svg {
+            transform: translateX(20px);
+        }
+    }
+}

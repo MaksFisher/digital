@@ -1,0 +1,50 @@
+section.home-services-section {
+    background-color: #f4f5f6;
+}
+
+.home-services-title {
+    font-size: 20px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+
+// slider
+
+.service-slider {
+    width: 100%;
+    padding: 0 15px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 0;
+    }
+
+    .service-slide {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 15px;
+        cursor: url(../images/slider-drag.svg), auto;
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            width: 50%;
+        }
+
+        &__img {
+            width: 100%;
+            position: relative;
+            padding-top: 480/720 * 100%;
+
+            img {
+                @extend .img-full-fit;
+            }
+        }
+
+        &__title {
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+    }
+}
